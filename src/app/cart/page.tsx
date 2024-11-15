@@ -9,6 +9,11 @@ export default function Page() {
     {name: "콜라", price: 1000, quantity: 2},
     {name: "녹차", price: 1500, quantity: 3},
     {name: "커피", price: 3000, quantity: 3},
+    {name: "커피", price: 3000, quantity: 3},
+    {name: "커피", price: 3000, quantity: 3},
+    {name: "커피", price: 3000, quantity: 3},
+    {name: "커피", price: 3000, quantity: 3},
+    {name: "커피", price: 3000, quantity: 3}
   ];
   const nextPage = (url: string) => {
     router.push(url);

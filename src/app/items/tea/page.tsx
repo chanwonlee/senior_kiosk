@@ -45,7 +45,7 @@ export default function Page() {
           className="h-1/12 w-1/12"
         />
 
-        <div className="flex-1 text-center mr-5 text-5xl font-['Paperlogy']">
+        <div className="flex-1 text-center mr-5 text-5xl text-black font-['Paperlogy']">
           차
         </div>
       </div>

@@ -19,6 +19,14 @@
   src: url('/fonts/Paperlogy.ttf') format("truetype");
 }
 
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
@@ -27,8 +35,8 @@ body {
 
 .content-container {
   aspect-ratio: 9 / 16;
-  max-height: 100vh;
-  max-width: 100vw;
+  max-height: 100dvh;
+  max-width: 100dvw;
   background-color: white;
 }
 
@@ -37,13 +45,6 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
-  padding-bottom: env(safe-area-inset-bottom);  /* 하단 바 고려 */
-}
-
-@media (max-width: 767px) {
-  body {
-    padding-bottom: env(safe-area-inset-bottom);  /* 모바일에서 하단바를 고려 */
-  }
 }
