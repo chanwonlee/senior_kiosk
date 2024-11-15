@@ -1,5 +1,6 @@
 "use client";
 import {useRouter} from 'next/navigation';
+import Image from "next/image";
 
 export default function Page() {
   const router = useRouter();
@@ -11,8 +12,10 @@ export default function Page() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <div className="flex flex-col flex-grow items-center">
-        <img src="/png/payment/paper.png" alt="paper"
-             onClick={() => nextPage("/end")}/>
+        <Image src="/png/payment/paper.png" alt="paper"
+               width={600}
+               height={600}
+               onClick={() => nextPage("/end")}/>
       </div>
     </div>
   );

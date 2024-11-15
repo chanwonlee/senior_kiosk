@@ -1,6 +1,7 @@
 "use client";
 import {useState} from "react";
 import {useRouter} from "next/navigation";
+import Image from "next/image";
 
 export default function Page() {
   const router = useRouter();
@@ -21,7 +22,11 @@ export default function Page() {
   return (
     <div className="flex flex-col min-h-screen">
       <div className="relative">
-        <img src="/png/item/background.png" alt="background"/>
+        <Image src="/png/item/background.png"
+               alt="background"
+               width={600}
+               height={600}
+        />
         <div
           className="absolute top-3/4 left-1/2 transform -translate-x-1/2 text-5xl pt-5 whitespace-nowrap font-['Paperlogy']">
           가격:3500원
@@ -36,15 +41,22 @@ export default function Page() {
               <div className="font-['Paperlogy']">{quantity}</div>
             </div>
             <div className="flex flex-row items-center justify-end">
-              <img className="size-3/12 mr-2" src="/png/item/minus.png"
-                   onClick={minus}/>
-              <img className="size-3/12 ml-2" src="/png/item/plus.png"
-                   onClick={plus}/>
+              <Image className="size-3/12 mr-2" src="/png/item/minus.png"
+                     alt={"minus"}
+                     width={50}
+                     height={50}
+                     onClick={minus}/>
+              <Image className="size-3/12 ml-2" src="/png/item/plus.png"
+                     alt={"plus"}
+                     width={50}
+                     height={50}
+                     onClick={plus}/>
             </div>
           </div>
 
-          <div className="bg-red-500 border-4 rounded-2xl border-red-600 text-4xl text-white text-center p-4 mx-6 justify-between mt-5 font-['Paperlogy']"
-                onClick={()=> nextPage("menu")}>
+          <div
+            className="bg-red-500 border-4 rounded-2xl border-red-600 text-4xl text-white text-center p-4 mx-6 justify-between mt-5 font-['Paperlogy']"
+            onClick={() => nextPage("menu")}>
             장바구니에 넣기
           </div>
         </div>
