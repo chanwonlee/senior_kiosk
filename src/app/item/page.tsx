@@ -28,14 +28,14 @@ export default function Page() {
                height={600}
         />
         <div
-          className="absolute top-3/4 left-1/2 transform -translate-x-1/2 text-5xl pt-5 whitespace-nowrap font-['Paperlogy']">
+          className="absolute top-3/4 left-1/2 transform -translate-x-1/2 text-5xl pt-2 whitespace-nowrap font-['Paperlogy']">
           가격:3500원
         </div>
       </div>
       <div className="flex flex-col flex-grow items-center">
         <div className="flex flex-col mt-8">
           <div
-            className="border-4 rounded-2xl border-red-600 text-5xl p-4 mx-6 flex flex-row items-center justify-between">
+            className="border-4 rounded-2xl border-red-600 text-5xl p-4 flex flex-row items-center justify-between">
             <div className="flex flex-row items-center">
               <div className="ml-2 pr-2 whitespace-nowrap font-['Paperlogy']">수량:</div>
               <div className="font-['Paperlogy']">{quantity}</div>
@@ -55,7 +55,7 @@ export default function Page() {
           </div>
 
           <div
-            className="bg-red-500 border-4 rounded-2xl border-red-600 text-4xl text-white text-center p-4 mx-6 justify-between mt-5 font-['Paperlogy']"
+            className="bg-red-500 border-4 rounded-2xl border-red-600 text-4xl text-white text-center p-4 justify-between mt-4 font-['Paperlogy']"
             onClick={() => nextPage("menu")}>
             장바구니에 넣기
           </div>
