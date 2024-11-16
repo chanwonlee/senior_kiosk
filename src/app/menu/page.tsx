@@ -16,8 +16,8 @@ export default function Page() {
           className="h-1/12 w-1/12"
           src="/png/menu/backbutton.png"
           alt="Back button"
-          width={50}
-          height={50}
+          width={100}
+          height={100}
           onClick={() => nextPage("/")}
         />
         <Image
@@ -30,57 +30,45 @@ export default function Page() {
         />
       </div>
 
-      <div className="flex flex-col flex-grow items-center">
-        <div className="flex flex-row mt-2">
-          <Image
-            className="w-1/2 p-1 pl-6"
-            src="/png/menu/button1.png"
-            alt="Coffee"
-            width={200}
-            height={200}
+      <div className="flex flex-col h-[34vh] flex-grow items-center gap-2 px-10">
+        <div className="flex flex-row w-full gap-2">
+          <div
             onClick={() => nextPage("/items/coffee")}
-          />
-          <Image
-            className="w-1/2 p-1 pr-6"
-            src="/png/menu/button2.png"
-            alt="Tea"
-            width={200}
-            height={200}
+            className="flex-1 h-[20vh] text-6xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-red-500 font-['Paperlogy'] cursor-pointer"
+          >
+            커피
+          </div>
+          <div
             onClick={() => nextPage("/items/tea")}
-          />
+            className="flex-1 h-[20vh] text-6xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-red-500 font-['Paperlogy'] cursor-pointer"
+          >
+            차
+          </div>
         </div>
-        <div className="flex flex-row">
-          <Image
-            className="w-1/2 p-1 pl-6"
-            src="/png/menu/button3.png"
-            alt="Juice"
-            width={200}
-            height={200}
+        <div className="flex flex-row w-full gap-2">
+          <div
             onClick={() => nextPage("/items/juice")}
-          />
-          <Image
-            className="w-1/2 p-1 pr-6"
-            src="/png/menu/button4.png"
-            alt="Bread"
-            width={200}
-            height={200}
+            className="flex-1 h-[20vh] text-6xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-red-500 font-['Paperlogy'] cursor-pointer"
+          >
+            과일<br/>주스
+          </div>
+          <div
             onClick={() => nextPage("/items/bread")}
-          />
+            className="flex-1 h-[20vh] text-6xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-red-500 font-['Paperlogy'] cursor-pointer"
+          >
+            빵
+          </div>
         </div>
       </div>
 
-      <div>
-        <Image
-          className="flex w-full p-3 pl-5 pr-5"
-          src="/png/menu/button5.png"
-          alt="Pay"
-          width={200}
-          height={60}
-          onClick={() => nextPage("/cart")}
-        />
+      <div
+        className="bg-red-500 border-4 rounded-2xl border-red-600 text-5xl text-white p-4 mx-6 mb-2 text-center font-['Paperlogy'] cursor-pointer"
+        onClick={() => nextPage("/payment")}
+      >
+        결제하기
       </div>
 
-      <div className="flex flex-row flex-grow items-center justify-between">
+      <div className="flex flex-row h-[25vh] mt-auto items-end">
         <Image
           className="w-1/2 ml-7"
           src="/png/menu/words.png"

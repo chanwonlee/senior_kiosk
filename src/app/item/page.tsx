@@ -55,7 +55,7 @@ export default function Page() {
           </div>
 
           <div
-            className="bg-red-500 border-4 rounded-2xl border-red-600 text-4xl text-white text-center text-black p-4 justify-between mt-4 font-['Paperlogy']"
+            className="bg-red-500 border-4 rounded-2xl border-red-600 text-4xl text-white text-center p-4 justify-between mt-4 font-['Paperlogy']"
             onClick={() => nextPage("menu")}>
             장바구니에 넣기
           </div>

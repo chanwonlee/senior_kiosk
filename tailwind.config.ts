@@ -11,6 +11,9 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        maxHeight: {
+          '100': '26rem',
+        }
       },
     },
   },

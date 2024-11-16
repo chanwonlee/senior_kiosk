@@ -20,24 +20,9 @@ export default function Page() {
     router.push(url);
   };
 
-  const coffeeImages = [
-    "/png/items/bread/1.png",
-    "/png/items/bread/2.png",
-    "/png/items/bread/3.png",
-    "/png/items/bread/4.png",
-    "/png/items/bread/5.png",
-    "/png/items/bread/6.png",
-  ];
-
-  // 이미지를 2개씩 묶어 행 단위로 나누기
-  const imageRows = [];
-  for (let i = 0; i < coffeeImages.length; i += 2) {
-    imageRows.push(coffeeImages.slice(i, i + 2));
-  }
-
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="flex flex-row items-center justify-between mx-8 mt-10 h-2/12">
+      <div className="flex flex-row items-center justify-between mx-8 mt-5 mb-2 h-[10vh]">
         <NavigationButton
           src="/png/menu/backbutton.png"
           alt="back button"
@@ -50,41 +35,58 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="flex flex-row mt-5 items-center">
+      <div className="flex flex-row flex-1 items-center px-2">
         <NavigationButton
           src="/png/items/undo_button.png"
           alt="undo button"
           onClick={() => nextPage("/items/juice")}
-          className="w-1/12 pl-1"
+          className="w-1/12"
         />
 
-        <div className="flex flex-col flex-grow items-center">
-          {imageRows.map((row, rowIndex) => (
-            <div key={rowIndex} className="flex flex-row">
-              {row.map((image, imageIndex) => (
-                <Image
-                  key={imageIndex}
-                  className="w-1/2 p-1"
-                  src={image}
-                  alt={`coffee ${imageIndex + 1}`}
-                  width={150}
-                  height={150}
-                  onClick={() => nextPage("/item")}
-                />
-              ))}
+        <div className="flex flex-col flex-1 h-[60vh] justify-between gap-3 px-2">
+          <div className="flex flex-row w-full gap-2 h-1/3">
+            <div className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+                 onClick={() => nextPage("/item")}>
+              녹차<br/>케이크
             </div>
-          ))}
+            <div className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+                 onClick={() => nextPage("/item")}>
+              딸기초코<br/>케이크
+            </div>
+          </div>
+
+          <div className="flex flex-row w-full gap-2 h-1/3">
+            <div className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+                 onClick={() => nextPage("/item")}>
+              딸기<br/>케이크
+            </div>
+            <div className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+                 onClick={() => nextPage("/item")}>
+              딸기<br/>크로와상
+            </div>
+          </div>
+
+          <div className="flex flex-row w-full gap-2 h-1/3">
+            <div className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+                 onClick={() => nextPage("/item")}>
+              사과파이
+            </div>
+            <div className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+                 onClick={() => nextPage("/item")}>
+              점심세트
+            </div>
+          </div>
         </div>
 
         <NavigationButton
           src="/png/items/next_button.png"
           alt="next button"
           onClick={() => nextPage("/items/coffee")}
-          className="w-1/12 pr-1"
+          className="w-1/12"
         />
       </div>
 
-      <div className="flex flex-row flex-grow items-center justify-between">
+      <div className="flex flex-row h-[25vh] mt-auto items-end">
         <Image
           className="w-1/2 ml-7"
           src="/png/items/words.png"
