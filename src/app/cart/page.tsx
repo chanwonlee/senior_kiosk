@@ -1,25 +1,60 @@
 "use client";
-import {useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Page() {
   const router = useRouter();
-  // items 배열 수정: 튜플을 객체로 변경
-  const items = [
-    {name: "콜라", price: 1000, quantity: 2},
-    {name: "녹차", price: 1500, quantity: 3},
-    {name: "커피", price: 3000, quantity: 3},
-    {name: "커피", price: 3000, quantity: 3},
-    {name: "커피", price: 3000, quantity: 3},
-    {name: "커피", price: 3000, quantity: 3},
-    {name: "커피", price: 3000, quantity: 3},
-    {name: "커피", price: 3000, quantity: 3}
-  ];
+
+  const [items, setItems] = useState(
+    JSON.parse(localStorage.getItem("cart") || "[]")
+  );
+
+  interface CartItem {
+    name: string;
+    price: number;
+    quantity: number;
+  }
+
   const nextPage = (url: string) => {
     router.push(url);
   };
 
-  const totalAmount = items.reduce((total, item) => total + (item.price * item.quantity), 0);
+  const clearCartAndRedirect = (url: string) => {
+    // 로컬 스토리지에서 장바구니 데이터 삭제
+    localStorage.removeItem("cart");
+
+    // 페이지 이동
+    router.push(url);
+  };
+
+  const totalAmount = items.reduce(
+    (total: number, item:CartItem) => total + item.price * item.quantity,
+    0
+  );
+
+  const removeItem = (index: number) => {
+    // 해당 항목을 삭제한 후 새로운 배열로 업데이트
+    const updatedItems = items.filter((_:unknown, i:number) => i !== index);
+    setItems(updatedItems);
+
+    // 로컬 스토리지에 업데이트된 장바구니 저장
+    localStorage.setItem("cart", JSON.stringify(updatedItems));
+  };
+
+  const updateQuantity = (index: number, operation: "increase" | "decrease") => {
+    // 항목 수량 변경
+    const updatedItems = [...items];
+    if (operation === "increase") {
+      updatedItems[index].quantity += 1;
+    } else if (operation === "decrease" && updatedItems[index].quantity > 1) {
+      updatedItems[index].quantity -= 1;
+    }
+    setItems(updatedItems);
+
+    // 로컬 스토리지에 업데이트된 장바구니 저장
+    localStorage.setItem("cart", JSON.stringify(updatedItems));
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -34,22 +69,53 @@ export default function Page() {
         />
       </div>
 
-      <div className="flex flex-col max-h-96 overflow-y-auto">
-        {items.map((item, index) => (
-          <div
-            key={index}
-            className="bg-red-500 border-4 rounded-2xl border-red-600 text-3xl text-white p-4 mx-6 mb-2 text-center font-['Paperlogy']"
-          >
-            {item.name} {item.price}원 | {item.quantity}개
-          </div>
-        ))}
+      <div className="flex flex-col max-h-96 whitespace-nowrap overflow-y-auto">
+        {items.length === 0 ? (
+          <p className="text-center text-xl mt-4">장바구니가 비어 있습니다.</p>
+        ) : (
+          items.map((item:CartItem, index:number) => (
+            <div
+              key={index}
+              className="bg-red-500 border-4 rounded-2xl border-red-600 text-2xl text-white p-4 mx-6 mb-2 text-center font-['Paperlogy']"
+            >
+              <div className="flex flex-col justify-between text-1xl items-center">
+                <div>{item.name}</div>
+                <div className="flex flex-row justify-between items-center w-full pt-3">
+                  <div>₩{item.price}원</div>
+                  <div className="flex items-center">
+                    <button
+                      onClick={() => updateQuantity(index, "decrease")}
+                      className="text-black bg-white size-5 text-sm whitespace-nowrap rounded-full px-2"
+                    >
+                      -
+                    </button>
+                    <span className="mx-2">{item.quantity}개</span>
+                    <button
+                      onClick={() => updateQuantity(index, "increase")}
+                      className="text-black bg-white size-5 text-sm whitespace-nowrap rounded-full px-2"
+                    >
+                      +
+                    </button>
+                  </div>
+                  <button
+                    onClick={() => removeItem(index)}
+                    className="text-black bg-white size-5 text-sm whitespace-nowrap rounded-full"
+                  >
+                    삭제
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))
+        )}
       </div>
 
       <div className="flex flex-col items-center justify-end mx-6 mt-auto">
-        <div
-          className="bg-red-500 border-4 rounded-2xl border-red-600 text-3xl w-full text-white p-4 mx-6 mb-2 text-center font-['Paperlogy']">
-          총 금액: {totalAmount}원
-        </div>
+        {items.length > 0 && (
+          <div className="bg-red-500 border-4 rounded-2xl border-red-600 text-3xl w-full text-white p-4 mx-6 mb-2 text-center font-['Paperlogy']">
+            총 금액: {totalAmount}원
+          </div>
+        )}
         <div className="flex flex-row mb-2">
           <Image
             className="w-1/2 p-1"
@@ -57,7 +123,7 @@ export default function Page() {
             alt="paper"
             width={200}
             height={200}
-            onClick={() => nextPage("/payment/paper")}
+            onClick={() => clearCartAndRedirect("/payment/paper")}
           />
           <Image
             className="w-1/2 p-1"
@@ -65,7 +131,7 @@ export default function Page() {
             alt="card"
             width={200}
             height={200}
-            onClick={() => nextPage("/payment/card")}
+            onClick={() => clearCartAndRedirect("/payment/card")}
           />
         </div>
       </div>

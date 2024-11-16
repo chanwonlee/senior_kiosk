@@ -63,7 +63,7 @@ export default function Page() {
 
       <div
         className="bg-red-500 border-4 rounded-2xl border-red-600 text-5xl text-white p-4 mx-6 mb-2 text-center font-['Paperlogy'] cursor-pointer"
-        onClick={() => nextPage("/payment")}
+        onClick={() => nextPage("/cart")}
       >
         결제하기
       </div>

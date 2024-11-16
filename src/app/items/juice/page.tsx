@@ -1,8 +1,13 @@
 "use client";
-import { useRouter } from 'next/navigation';
+import {useRouter} from 'next/navigation';
 import Image from 'next/image';
 
-const NavigationButton = ({ src, alt, onClick, className }: { src: string, alt: string, onClick: () => void, className: string }) => (
+const NavigationButton = ({src, alt, onClick, className}: {
+  src: string,
+  alt: string,
+  onClick: () => void,
+  className: string
+}) => (
   <Image
     className={className}
     src={src}
@@ -18,6 +23,10 @@ export default function Page() {
 
   const nextPage = (url: string) => {
     router.push(url);
+  };
+
+  const nextPageWithQuery = (url: string, itemName: string, price: number, code: string) => {
+    router.push(`${url}?itemName=${itemName}&price=${price}&code=${code}`); // 수량을 쿼리로 전달
   };
 
   return (
@@ -46,33 +55,39 @@ export default function Page() {
         <div className="flex flex-col flex-1 h-[60vh] justify-between gap-2 px-2">
           <div className="flex flex-row w-full gap-2 h-1/3">
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']">
+              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              onClick={() => nextPageWithQuery("/item", "딸기주스", 3500, "juice/1")}>
               딸기<br/>주스
             </div>
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']">
+              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              onClick={() => nextPageWithQuery("/item", "라임주스", 3000, "juice/2")}>
               라임<br/>주스
             </div>
           </div>
 
           <div className="flex flex-row w-full gap-2 h-1/3">
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']">
+              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              onClick={() => nextPageWithQuery("/item", "블루베리주스", 3500, "juice/3")}>
               블루베리<br/>주스
             </div>
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']">
+              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              onClick={() => nextPageWithQuery("/item", "수박주스", 4000, "juice/4")}>
               수박<br/>주스
             </div>
           </div>
 
           <div className="flex flex-row w-full gap-2 h-1/3">
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']">
+              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              onClick={() => nextPageWithQuery("/item", "오렌지주스", 3000, "juice/5")}>
               오렌지<br/>주스
             </div>
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']">
+              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              onClick={() => nextPageWithQuery("/item", "자몽주스", 3500, "juice/6")}>
               자몽<br/>주스
             </div>
           </div>
