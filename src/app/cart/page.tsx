@@ -1,20 +1,26 @@
 "use client";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Page() {
   const router = useRouter();
 
-  const [items, setItems] = useState(
-    JSON.parse(localStorage.getItem("cart") || "[]")
-  );
+  const [items, setItems] = useState<CartItem[]>([]);
 
   interface CartItem {
     name: string;
     price: number;
     quantity: number;
   }
+
+  useEffect(() => {
+    // Ensure the code runs only on the client side
+    const storedCart = localStorage.getItem("cart");
+    if (storedCart) {
+      setItems(JSON.parse(storedCart));
+    }
+  }, []); // This runs only once when the component mounts on the client side
 
   const nextPage = (url: string) => {
     router.push(url);
@@ -29,13 +35,13 @@ export default function Page() {
   };
 
   const totalAmount = items.reduce(
-    (total: number, item:CartItem) => total + item.price * item.quantity,
+    (total: number, item: CartItem) => total + item.price * item.quantity,
     0
   );
 
   const removeItem = (index: number) => {
     // 해당 항목을 삭제한 후 새로운 배열로 업데이트
-    const updatedItems = items.filter((_:unknown, i:number) => i !== index);
+    const updatedItems = items.filter((_: unknown, i: number) => i !== index);
     setItems(updatedItems);
 
     // 로컬 스토리지에 업데이트된 장바구니 저장
@@ -65,7 +71,7 @@ export default function Page() {
           alt="back button1"
           width={50}
           height={50}
-          onClick={() => nextPage("/")}
+          onClick={() => nextPage("/menu")}
         />
       </div>
 
@@ -73,7 +79,7 @@ export default function Page() {
         {items.length === 0 ? (
           <p className="text-center text-xl mt-4">장바구니가 비어 있습니다.</p>
         ) : (
-          items.map((item:CartItem, index:number) => (
+          items.map((item: CartItem, index: number) => (
             <div
               key={index}
               className="bg-red-500 border-4 rounded-2xl border-red-600 text-2xl text-white p-4 mx-6 mb-2 text-center font-['Paperlogy']"
