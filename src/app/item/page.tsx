@@ -74,9 +74,9 @@ function SearchParamsComponent() {
       <div className="w-full bg-gradient-to-b from-red-400 to-white flex flex-col items-center justify-center">
         <div className="w-[32vh] h-[32vh] mt-10 bg-white rounded-full flex items-center justify-center shadow-lg mb-4">
           <Image
-            className="object-cover w-full h-full"
-            width={150}
-            height={150}
+            className="object-cover"
+            width={200}
+            height={200}
             src={`/png/items/${code}.png`}
             alt="item"
           />

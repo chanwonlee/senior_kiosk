@@ -30,7 +30,7 @@ export default function Page() {
         />
       </div>
 
-      <div className="flex flex-col flex-grow items-center gap-2 px-10">
+      <div className="flex flex-col h-[34vh] flex-grow items-center gap-2 px-10">
         <div className="flex flex-row w-full gap-2">
           <div
             onClick={() => nextPage("/items/coffee")}
