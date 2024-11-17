@@ -6,11 +6,9 @@ import React, { Suspense, useState, useEffect } from "react";
 
 export default function Page() {
   useEffect(() => {
-    // 페이지 로드 시 스크롤을 비활성화
     document.body.style.overflow = "hidden";
 
     return () => {
-      // 컴포넌트가 unmount될 때 원래 상태로 복원
       document.body.style.overflow = "auto";
     };
   }, []);
@@ -42,6 +40,10 @@ function SearchParamsComponent() {
     JSON.parse(localStorage.getItem("cart") || "[]")
   );
 
+  const nextPage = (url: string) => {
+    router.push(url);
+  };
+
   const plus = () => {
     setQuantity((prevQuantity) => Math.min(prevQuantity + 1, 10));
   };
@@ -72,55 +74,67 @@ function SearchParamsComponent() {
   return (
     <div className="flex flex-col min-h-screen">
       <div className="w-full bg-gradient-to-b from-red-400 to-white flex flex-col items-center justify-center">
-        <div className="w-[32vh] h-[32vh] mt-10 bg-white rounded-full flex items-center justify-center shadow-lg mb-4">
+        <div className="flex flex-row flex-grow size-full items-center justify-between px-3 mt-5">
           <Image
-            className="object-cover"
-            width={200}
-            height={200}
-            src={`/png/items/${code}.png`}
-            alt="item"
+            className="h-1/12 w-1/12"
+            src="/png/menu/backbutton.png"
+            alt="Back button"
+            width={100}
+            height={100}
+            onClick={() => nextPage(`/items/${code?.split("/")[0]}`)}
           />
         </div>
-        <div className="text-center pt-10">
-          <p className="text-3xl font-bold text-gray-700">{itemName}</p>
-          <p className="text-4xl font-semibold text-gray-900 pt-4">{price}</p>
-        </div>
-      </div>
-
-      <div className="flex flex-col flex-grow items-center">
-        <div className="flex flex-col mt-8 w-full px-4">
-          <div className="border-4 rounded-2xl border-red-600 text-4xl p-4 flex flex-row items-center justify-between">
-            <div className="flex flex-row items-center">
-              <div className="ml-2 pr-2 whitespace-nowrap text-4xl text-black font-['Paperlogy']">수량:</div>
-              <div className="text-black text-4xl font-['Paperlogy']">{quantity}</div>
-            </div>
-            <div className="flex flex-row justify-end">
-              <Image
-                className="size-[4vh] mr-1"
-                src="/png/item/minus.png"
-                alt={"minus"}
-                width={50}
-                height={50}
-                onClick={minus}
-              />
-              <Image
-                className="size-[4vh] ml-1"
-                src="/png/item/plus.png"
-                alt={"plus"}
-                width={50}
-                height={50}
-                onClick={plus}
-              />
-            </div>
-          </div>
           <div
-            className="bg-red-500 border-4 rounded-2xl border-red-600 text-4xl text-white text-center p-4 justify-between mt-4 font-['Paperlogy']"
-            onClick={addToCart}
-          >
-            장바구니에 넣기
+            className="w-[32vh] h-[32vh] mt-10 bg-white rounded-full flex items-center justify-center shadow-lg mb-4">
+            <Image
+              className="object-cover"
+              width={150}
+              height={150}
+              src={`/png/items/${code}.png`}
+              alt="item"
+            />
+          </div>
+          <div className="text-center pt-10">
+            <p className="text-3xl font-bold text-gray-700">{itemName}</p>
+            <p className="text-4xl font-semibold text-gray-900 pt-4">₩{price}원</p>
+          </div>
+        </div>
+
+        <div className="flex flex-col flex-grow items-center">
+          <div className="flex flex-col mt-8 w-full px-4">
+            <div
+              className="border-4 rounded-2xl border-red-600 text-4xl p-4 flex flex-row items-center justify-between">
+              <div className="flex flex-row items-center">
+                <div className="ml-2 pr-2 whitespace-nowrap text-4xl text-black font-['Paperlogy']">수량:</div>
+                <div className="text-black text-4xl font-['Paperlogy']">{quantity}</div>
+              </div>
+              <div className="flex flex-row justify-end">
+                <Image
+                  className="size-[4vh] mr-1"
+                  src="/png/item/minus.png"
+                  alt={"minus"}
+                  width={50}
+                  height={50}
+                  onClick={minus}
+                />
+                <Image
+                  className="size-[4vh] ml-1"
+                  src="/png/item/plus.png"
+                  alt={"plus"}
+                  width={50}
+                  height={50}
+                  onClick={plus}
+                />
+              </div>
+            </div>
+            <div
+              className="bg-red-500 border-4 rounded-2xl border-red-600 text-4xl text-white text-center p-4 justify-between mt-4 font-['Paperlogy']"
+              onClick={addToCart}
+            >
+              장바구니에 넣기
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-}
+      );
+      }
