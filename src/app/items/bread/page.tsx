@@ -31,7 +31,7 @@ export default function Page() {
           src="/png/menu/backbutton.png"
           alt="back button"
           onClick={() => nextPage("/menu")}
-          className="h-1/12"
+          className="size-2/12"
         />
 
         <div className="flex-1 text-center mr-5 text-5xl text-black font-['Paperlogy']">
@@ -49,34 +49,40 @@ export default function Page() {
 
         <div className="flex flex-col flex-1 h-[60vh] justify-between gap-3 px-2">
           <div className="flex flex-row w-full gap-2 h-1/3">
-            <div className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
-                 onClick={() => nextPageWithQuery("/item", "녹차케이크", 9000, "bread/1")}>
+            <div
+              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              onClick={() => nextPageWithQuery("/item", "녹차케이크", 9000, "bread/1")}>
               녹차<br/>케이크
             </div>
-            <div className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
-                 onClick={() => nextPageWithQuery("/item", "딸기초코케이크", 12000, "bread/2")}>
+            <div
+              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              onClick={() => nextPageWithQuery("/item", "딸기초코케이크", 12000, "bread/2")}>
               딸기초코<br/>케이크
             </div>
           </div>
 
           <div className="flex flex-row w-full gap-2 h-1/3">
-            <div className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
-                 onClick={() => nextPageWithQuery("/item", "딸기케이크", 10000, "bread/3")}>
+            <div
+              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              onClick={() => nextPageWithQuery("/item", "딸기케이크", 10000, "bread/3")}>
               딸기<br/>케이크
             </div>
-            <div className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
-                 onClick={() => nextPageWithQuery("/item", "딸기 크로와상", 4000, "bread/4")}>
+            <div
+              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              onClick={() => nextPageWithQuery("/item", "딸기 크로와상", 4000, "bread/4")}>
               딸기<br/>크로와상
             </div>
           </div>
 
           <div className="flex flex-row w-full gap-2 h-1/3">
-            <div className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
-                 onClick={() => nextPageWithQuery("/item", "사과파이", 3000, "bread/5")}>
+            <div
+              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              onClick={() => nextPageWithQuery("/item", "사과파이", 3000, "bread/5")}>
               사과파이
             </div>
-            <div className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
-                 onClick={() => nextPageWithQuery("/item", "점심세트", 15000, "bread/6")}>
+            <div
+              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              onClick={() => nextPageWithQuery("/item", "점심세트", 15000, "bread/6")}>
               점심세트
             </div>
           </div>

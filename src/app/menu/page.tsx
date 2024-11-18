@@ -13,7 +13,7 @@ export default function Page() {
     <div className="flex flex-col min-h-screen">
       <div className="flex flex-row flex-grow items-center justify-between mx-6 mt-2">
         <Image
-          className="h-2/12 w-2/12"
+          className="size-2/12"
           src="/png/menu/backbutton.png"
           alt="Back button"
           width={100}

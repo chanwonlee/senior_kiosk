@@ -31,7 +31,7 @@ export default function Page() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="flex flex-row flex-grow items-center justify-between mx-6 mt-8 mb-2">
+      <div className="flex flex-row items-center justify-between mx-8 mt-5 pb-3">
         <NavigationButton
           src="/png/menu/backbutton.png"
           alt="back button"
