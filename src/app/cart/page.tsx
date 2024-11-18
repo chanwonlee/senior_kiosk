@@ -25,11 +25,6 @@ export default function Page() {
     router.push(url);
   };
 
-  const clearCartAndRedirect = (url: string) => {
-    localStorage.removeItem("cart");
-    router.push(url);
-  };
-
   const totalAmount = items.reduce(
     (total: number, item: CartItem) => total + item.price * item.quantity,
     0
@@ -63,7 +58,7 @@ export default function Page() {
     <div className="flex flex-col min-h-screen">
       <div className="flex flex-row items-center justify-between mx-8 my-4">
         <Image
-          className="h-1/12 w-1/12"
+          className="size-2/12"
           src="/png/menu/backbutton.png"
           alt="back button1"
           width={50}
@@ -132,7 +127,7 @@ export default function Page() {
             alt="paper"
             width={200}
             height={200}
-            onClick={() => clearCartAndRedirect("/payment/paper")}
+            onClick={() => nextPage("/payment/paper")}
           />
           <Image
             className="w-1/2 p-1"
@@ -140,7 +135,7 @@ export default function Page() {
             alt="card"
             width={200}
             height={200}
-            onClick={() => clearCartAndRedirect("/payment/card")}
+            onClick={() => nextPage("/payment/card")}
           />
         </div>
       </div>

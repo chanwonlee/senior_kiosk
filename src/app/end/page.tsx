@@ -5,7 +5,8 @@ import Image from "next/image";
 export default function Page() {
   const router = useRouter();
 
-  const nextPage = (url: string) => {
+  const clearCartAndRedirect = (url: string) => {
+    localStorage.removeItem("cart");
     router.push(url);
   };
 
@@ -15,7 +16,7 @@ export default function Page() {
         <Image src="/png/end/background.png" alt="up"
                width={600}
                height={600}
-               onClick={() => nextPage("/")}/>
+               onClick={() => clearCartAndRedirect("/")}/>
       </div>
     </div>
   );

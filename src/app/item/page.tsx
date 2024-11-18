@@ -74,18 +74,18 @@ function SearchParamsComponent() {
   return (
     <div className="flex flex-col min-h-screen">
       <div className="w-full bg-gradient-to-b from-red-400 to-white flex flex-col items-center justify-center">
-        <div className="flex flex-row flex-grow size-full items-center justify-between px-3 mt-5">
+        <div className="flex flex-row flex-grow size-full items-center justify-between mt-6">
           <Image
-            className="h-1/12 w-1/12"
+            className="size-2/12 p-1 ml-6"
             src="/png/menu/backbutton.png"
             alt="Back button"
-            width={100}
-            height={100}
+            width={40}
+            height={50}
             onClick={() => nextPage(`/items/${code?.split("/")[0]}`)}
           />
         </div>
           <div
-            className="w-[32vh] h-[32vh] mt-10 bg-white rounded-full flex items-center justify-center shadow-lg mb-4">
+            className="size-[28vh] mt-8 bg-white rounded-full flex items-center justify-center shadow-lg mb-4">
             <Image
               className="object-cover"
               width={150}
@@ -94,7 +94,7 @@ function SearchParamsComponent() {
               alt="item"
             />
           </div>
-          <div className="text-center pt-10">
+          <div className="text-center pt-5">
             <p className="text-3xl font-bold text-gray-700">{itemName}</p>
             <p className="text-4xl font-semibold text-gray-900 pt-4">₩{price}원</p>
           </div>

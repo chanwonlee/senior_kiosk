@@ -26,12 +26,12 @@ export default function Page() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="flex flex-row items-center justify-between mx-8 mt-5 mb-2 h-[10vh]">
+      <div className="flex flex-row items-center justify-between mx-8 mt-5 pb-3">
         <NavigationButton
           src="/png/menu/backbutton.png"
           alt="back button"
           onClick={() => nextPage("/menu")}
-          className="h-1/12 w-1/12"
+          className="h-1/12"
         />
 
         <div className="flex-1 text-center mr-5 text-5xl text-black font-['Paperlogy']">

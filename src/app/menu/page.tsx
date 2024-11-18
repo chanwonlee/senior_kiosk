@@ -11,9 +11,9 @@ export default function Page() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="flex flex-row flex-grow items-center justify-between mx-8 mt-2">
+      <div className="flex flex-row flex-grow items-center justify-between mx-6 mt-2">
         <Image
-          className="h-1/12 w-1/12"
+          className="h-2/12 w-2/12"
           src="/png/menu/backbutton.png"
           alt="Back button"
           width={100}
@@ -21,11 +21,11 @@ export default function Page() {
           onClick={() => nextPage("/")}
         />
         <Image
-          className="h-2/12 w-2/12 p-1"
+          className="size-3/12 p-1"
           src="/png/menu/cart.png"
           alt="Cart"
-          width={50}
-          height={50}
+          width={100}
+          height={100}
           onClick={() => nextPage("/cart")}
         />
       </div>
