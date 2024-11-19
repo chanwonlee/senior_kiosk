@@ -28,7 +28,7 @@ export default function Page() {
   const totalAmount = items.reduce(
     (total: number, item: CartItem) => total + item.price * item.quantity,
     0
-  );
+  ).toLocaleString('ko-KR');
 
   const removeItem = (index: number) => {
     const updatedItems = items.filter((_: unknown, i: number) => i !== index);
@@ -69,7 +69,7 @@ export default function Page() {
 
       <div className="flex flex-col max-h-96 whitespace-nowrap overflow-y-auto">
         {items.length === 0 ? (
-          <p className="text-center text-xl mt-4">장바구니가 비어 있습니다.</p>
+          <p className="text-center text-4xl text-black font-['Paperlogy'] mt-4">장바구니가 비어 있습니다.</p>
         ) : (
           items.map((item: CartItem, index: number) => (
             <div
@@ -79,7 +79,7 @@ export default function Page() {
               <div className="flex flex-col justify-between text-1xl items-center">
                 <div>{item.name}</div>
                 <div className="flex flex-row justify-between items-center w-full pt-2">
-                  <div>₩{item.price}원</div>
+                  <div>₩{item.price.toLocaleString('ko-KR')}원</div>
                   <div className="flex items-center">
                     <Image
                       className="size-[4vh] mr-1"

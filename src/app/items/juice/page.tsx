@@ -55,40 +55,67 @@ export default function Page() {
         <div className="flex flex-col flex-1 h-[60vh] justify-between gap-2 px-2">
           <div className="flex flex-row w-full gap-2 h-1/3">
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              className="flex-1 flex-col text-base border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-black bg-white font-['Paperlogy']"
               onClick={() => nextPageWithQuery("/item", "딸기주스", 3500, "juice/1")}>
-              딸기<br/>주스
+              <Image src={"/png/items/juice/1.png"} alt={"juice1"}
+                     width={90}
+                     height={90}
+              ></Image>
+              <div>딸기주스</div>
             </div>
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              className="flex-1 flex-col text-base border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-black bg-white font-['Paperlogy']"
               onClick={() => nextPageWithQuery("/item", "라임주스", 3000, "juice/2")}>
-              라임<br/>주스
+              <Image src={"/png/items/juice/2.png"} alt={"juice2"}
+                     width={95}
+                     height={95}
+              ></Image>
+              <div>라임주스</div>
             </div>
           </div>
 
           <div className="flex flex-row w-full gap-2 h-1/3">
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              className="flex-1 flex-col text-base border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-black bg-white font-['Paperlogy']"
               onClick={() => nextPageWithQuery("/item", "블루베리주스", 3500, "juice/3")}>
-              블루베리<br/>주스
+              <Image src={"/png/items/juice/3.png"} alt={"juice3"}
+                     width={90}
+                     height={90}
+              ></Image>
+              <div>블루베리주스</div>
             </div>
+
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              className="flex-1 flex-col text-base border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-black bg-white font-['Paperlogy']"
               onClick={() => nextPageWithQuery("/item", "수박주스", 4000, "juice/4")}>
-              수박<br/>주스
+              <Image src={"/png/items/juice/4.png"} alt={"juice4"}
+                     width={100}
+                     height={100}
+              ></Image>
+              <div>수박주스</div>
             </div>
           </div>
 
           <div className="flex flex-row w-full gap-2 h-1/3">
+
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              className="flex-1 flex-col text-base border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-black bg-white font-['Paperlogy']"
               onClick={() => nextPageWithQuery("/item", "오렌지주스", 3000, "juice/5")}>
-              오렌지<br/>주스
+              <Image src={"/png/items/juice/5.png"} alt={"juice5"}
+                     width={100}
+                     height={100}
+              ></Image>
+              <div>오렌지주스</div>
             </div>
+
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              className="flex-1 flex-col text-base border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-black bg-white font-['Paperlogy']"
               onClick={() => nextPageWithQuery("/item", "자몽주스", 3500, "juice/6")}>
-              자몽<br/>주스
+              <Image src={"/png/items/juice/6.png"} alt={"juice6"}
+                     width={70}
+                     height={70}
+              ></Image>
+              <div>자몽주스</div>
             </div>
           </div>
         </div>

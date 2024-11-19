@@ -61,13 +61,6 @@ export default function Page() {
         </div>
       </div>
 
-      <div
-        className="bg-red-500 border-4 rounded-2xl border-red-600 text-5xl text-white p-4 mx-6 mb-2 text-center font-['Paperlogy'] cursor-pointer"
-        onClick={() => nextPage("/cart")}
-      >
-        결제하기
-      </div>
-
       <div className="flex flex-row h-[25vh] mt-auto items-end">
         <Image
           className="w-1/2 ml-7"

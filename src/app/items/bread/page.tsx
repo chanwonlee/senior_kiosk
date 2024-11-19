@@ -49,41 +49,64 @@ export default function Page() {
 
         <div className="flex flex-col flex-1 h-[60vh] justify-between gap-3 px-2">
           <div className="flex flex-row w-full gap-2 h-1/3">
-            <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+            <div className="flex-1 flex-col text-base border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-black bg-white font-['Paperlogy']"
               onClick={() => nextPageWithQuery("/item", "녹차케이크", 9000, "bread/1")}>
-              녹차<br/>케이크
+              <Image src={"/png/items/bread/1.png"} alt={"bread1"}
+                     width={110}
+                     height={110}
+              ></Image>
+              <div>녹차 케이크</div>
             </div>
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              className="flex-1 flex-col text-base border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-black bg-white font-['Paperlogy']"
               onClick={() => nextPageWithQuery("/item", "딸기초코케이크", 12000, "bread/2")}>
-              딸기초코<br/>케이크
+              <Image src={"/png/items/bread/2.png"} alt={"bread1"}
+                     width={110}
+                     height={110}
+              ></Image>
+              <div>딸기 초코 케이크</div>
             </div>
           </div>
 
           <div className="flex flex-row w-full gap-2 h-1/3">
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              className="flex-1 flex-col text-base border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-black bg-white font-['Paperlogy']"
               onClick={() => nextPageWithQuery("/item", "딸기케이크", 10000, "bread/3")}>
-              딸기<br/>케이크
+              <Image src={"/png/items/bread/3.png"} alt={"bread3"}
+                     width={110}
+                     height={110}
+              ></Image>
+              <div>딸기 케이크</div>
             </div>
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
-              onClick={() => nextPageWithQuery("/item", "딸기 크로와상", 4000, "bread/4")}>
-              딸기<br/>크로와상
+              className="flex-1 flex-col text-base border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-black bg-white font-['Paperlogy']"
+              onClick={() => nextPageWithQuery("/item", "딸기크로와상", 6000, "bread/4")}>
+              <Image src={"/png/items/bread/4.png"} alt={"bread4"}
+                     width={120}
+                     height={120}
+              ></Image>
+              <div>딸기 크로와상</div>
             </div>
           </div>
 
           <div className="flex flex-row w-full gap-2 h-1/3">
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              className="flex-1 flex-col text-base border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-black bg-white font-['Paperlogy']"
               onClick={() => nextPageWithQuery("/item", "사과파이", 3000, "bread/5")}>
-              사과파이
+              <Image src={"/png/items/bread/5.png"} alt={"bread5"}
+                     width={120}
+                     height={120}
+              ></Image>
+              <div>사과파이</div>
             </div>
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              className="flex-1 flex-col text-base border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-black bg-white font-['Paperlogy']"
               onClick={() => nextPageWithQuery("/item", "점심세트", 15000, "bread/6")}>
-              점심세트
+              <Image src={"/png/items/bread/6.png"} alt={"bread6"}
+                     width={120}
+                     height={120}
+              ></Image>
+              <div>점심세트</div>
             </div>
           </div>
         </div>

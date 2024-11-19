@@ -55,40 +55,64 @@ export default function Page() {
         <div className="flex flex-col flex-1 h-[60vh] justify-between gap-2 px-2">
           <div className="flex flex-row w-full gap-2 h-1/3">
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              className="flex-1 flex-col text-base border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-black bg-white font-['Paperlogy']"
               onClick={() => nextPageWithQuery("/item", "국화차", 3000, "tea/1")}>
-              국화차
+              <Image src={"/png/items/tea/1.png"} alt={"tea"}
+                     width={120}
+                     height={120}
+              ></Image>
+              <div>국화차</div>
             </div>
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              className="flex-1 flex-col text-base border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-black bg-white font-['Paperlogy']"
               onClick={() => nextPageWithQuery("/item", "녹차", 2500, "tea/2")}>
-              녹차
+              <Image src={"/png/items/tea/2.png"} alt={"tea2"}
+                     width={130}
+                     height={130}
+              ></Image>
+              <div>녹차</div>
             </div>
           </div>
 
           <div className="flex flex-row w-full gap-2 h-1/3">
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              className="flex-1 flex-col text-base border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-black bg-white font-['Paperlogy']"
               onClick={() => nextPageWithQuery("/item", "레몬차", 3000, "tea/3")}>
-              레몬차
+              <Image src={"/png/items/tea/3.png"} alt={"tea3"}
+                     width={100}
+                     height={100}
+              ></Image>
+              <div>레몬차</div>
             </div>
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              className="flex-1 flex-col text-base border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-black bg-white font-['Paperlogy']"
               onClick={() => nextPageWithQuery("/item", "루이보스차", 3000, "tea/4")}>
-              루이보스차
+              <Image src={"/png/items/tea/4.png"} alt={"tea4"}
+                     width={110}
+                     height={110}
+              ></Image>
+              <div>루이보스차</div>
             </div>
           </div>
 
           <div className="flex flex-row w-full gap-2 h-1/3">
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              className="flex-1 flex-col text-base border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-black bg-white font-['Paperlogy']"
               onClick={() => nextPageWithQuery("/item", "복숭아차", 3500, "tea/5")}>
-              복숭아차
+              <Image src={"/png/items/tea/5.png"} alt={"tea5"}
+                     width={70}
+                     height={70}
+              ></Image>
+              <div>복숭아차</div>
             </div>
             <div
-              className="flex-1 text-4xl border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-white bg-red-500 font-['Paperlogy']"
+              className="flex-1 flex-col text-base border-red-600 border-4 rounded-2xl flex items-center justify-center text-center text-black bg-white font-['Paperlogy']"
               onClick={() => nextPageWithQuery("/item", "페퍼민트차", 3500, "tea/6")}>
-              페퍼민트차
+              <Image src={"/png/items/tea/6.png"} alt={"tea6"}
+                     width={120}
+                     height={120}
+              ></Image>
+              <div>페퍼민트차</div>
             </div>
           </div>
         </div>
