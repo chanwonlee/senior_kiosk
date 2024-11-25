@@ -19,7 +19,7 @@ export default function Page() {
           alt="Back button"
           width={100}
           height={100}
-          onClick={() => nextPage("/")}
+          onClick={() => nextPage("/cart")}
         />
       </div>
       <div className="flex flex-col flex-grow items-center">
